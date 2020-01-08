@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+     <!--1.配置springmvc注解启动  -->
+     <mvc:annotation-driven/>
+     <!--2.配置视图解析器  -->
+     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+             <property  name="prefix"  value="/WEB-INF/view/"  />
+             <property  name="suffix"  value=".jsp" />
+     </bean>
+     <!--3.配置文件上传解析器
+          id值必须是multipartResolver
+       -->
+      <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+             <!--(1)配置文件上传大小，单位：bytes 如  1m=1024kb  1kb=1024byte  1byte=8bit  -->
+             <property  name="maxUploadSize"  value="#{1024*1024}"/>
+      </bean>
+     
+
+</beans>
