@@ -27,6 +27,7 @@ public class UserController {
 		List<User>list=userService.selectListService();
 		System.out.println(list);
 		m.addAttribute("users",list);
+		System.out.println("用户列表，加油成！");
 		return "userList";
 		/*return null;*/
 	}
