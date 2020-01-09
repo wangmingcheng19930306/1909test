@@ -21,4 +21,6 @@ public interface UserMapper {
 	//3.删除用户
 	@Delete("delete from s_user  where id=#{id}")
 	public int deleteByPrimaryKey(Integer id);
+
+    //4.登录功能
 }
